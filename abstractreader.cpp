@@ -24,6 +24,12 @@ void AbstractReader::read(float &v)
     this->read(ptr, sizeof(float));
 }
 
+void AbstractReader::read(double &v)
+{
+    void *ptr = &v;
+    this->read(ptr, sizeof(double));
+}
+
 void AbstractReader::read(long double &v)
 {
     void *ptr = &v;

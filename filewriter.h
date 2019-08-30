@@ -3,17 +3,20 @@
 
 #include "abstractwriter.h"
 
+#include <fstream>
+
 class FileWriter : public AbstractWriter
 {
+    std::ofstream *_file;
 public:
-    FileWriter(std::string filename);
+    FileWriter(std::ofstream *file);
 
-    // AbstractWriter interface
-public:
-    virtual void write(const void *data, int length) override final
-    {
+    long pos() const;
+    void seek(long pos);
+    long length();
+    void flush();
 
-    }
+    virtual void write(const void *data, int length) override final;
 };
 
 #endif // FILEWRITER_H
