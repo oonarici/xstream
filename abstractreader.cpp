@@ -18,6 +18,12 @@ void AbstractReader::read(unsigned int &v)
     this->read(ptr, sizeof(unsigned int));
 }
 
+void AbstractReader::read(float &v)
+{
+    void *ptr = &v;
+    this->read(ptr, sizeof(float));
+}
+
 void AbstractReader::read(long double &v)
 {
     void *ptr = &v;
