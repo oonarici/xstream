@@ -6,10 +6,12 @@ CONFIG -= qt
 SOURCES += \
         abstractreader.cpp \
         abstractwriter.cpp \
+        filereader.cpp \
         filewriter.cpp \
         main.cpp
 
 HEADERS += \
     abstractreader.h \
     abstractwriter.h \
+    filereader.h \
     filewriter.h
