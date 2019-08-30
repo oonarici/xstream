@@ -1,5 +1,11 @@
 #include "abstractreader.h"
 
+void AbstractReader::read(short &v)
+{
+    void *ptr = &v;
+    this->read(ptr, sizeof(short));
+}
+
 void AbstractReader::read(unsigned int &v)
 {
     void *ptr = &v;
