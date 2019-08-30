@@ -8,7 +8,7 @@ class AbstractReader
 public:
     AbstractReader() {}
 
-    void read(bool &v);
+    void read(bool &v); //Dolduruldu
     void read(char &v);
     void read(unsigned char &v);
     void read(short &v);

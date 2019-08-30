@@ -1,5 +1,23 @@
 #include "abstractreader.h"
 
+void AbstractReader::read(bool &v)
+{
+    void *ptr = &v;
+    this->read(ptr, sizeof(bool));
+}
+
+void AbstractReader::read(char &v)
+{
+    void *ptr = &v;
+    this->read(ptr, sizeof(char));
+}
+
+void AbstractReader::read(unsigned char &v)
+{
+    void *ptr = &v;
+    this->read(ptr, sizeof(unsigned char));
+}
+
 void AbstractReader::read(short &v)
 {
     void *ptr = &v;
@@ -12,10 +30,28 @@ void AbstractReader::read(unsigned short &v)
     this->read(ptr, sizeof(unsigned short));
 }
 
+void AbstractReader::read(int &v)
+{
+    void *ptr = &v;
+    this->read(ptr, sizeof(int));
+}
+
 void AbstractReader::read(unsigned int &v)
 {
     void *ptr = &v;
     this->read(ptr, sizeof(unsigned int));
+}
+
+void AbstractReader::read(long &v)
+{
+    void *ptr = &v;
+    this->read(ptr, sizeof(long));
+}
+
+void AbstractReader::read(unsigned long &v)
+{
+    void *ptr = &v;
+    this->read(ptr, sizeof(unsigned long));
 }
 
 void AbstractReader::read(float &v)
