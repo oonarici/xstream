@@ -24,7 +24,7 @@ long FileReader::length()
     return len;
 }
 
-void FileReader::read(void *data, int length)
+void FileReader::readBase(void *data, int length)
 {
     this->_file->read((char*)data, length);
 }

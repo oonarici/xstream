@@ -29,7 +29,7 @@ void FileWriter::flush()
     this->_file->flush();
 }
 
-void FileWriter::write(const void *data, int length)
+void FileWriter::writeBase(const void *data, int length)
 {
     this->_file->write((const char*)data, length);
 }

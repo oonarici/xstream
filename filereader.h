@@ -16,7 +16,7 @@ public:
     void seek(long pos);
     long length();
 
-    virtual void read(void *data, int length) override final;
+    virtual void readBase(void *data, int length) override final;
 };
 
 #endif // FILEREADER_H

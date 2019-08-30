@@ -21,8 +21,10 @@ public:
     void write(const double &v);
     void write(const long double &v); //Dolduruldu
     void write(const std::string &v); //Dolduruldu
+    void write(const void *data, int length);
 
-    virtual void write(const void *data, int length) = 0;
+protected:
+    virtual void writeBase(const void *data, int length) = 0;
 };
 
 #endif // ABSTRACTWRITER_H

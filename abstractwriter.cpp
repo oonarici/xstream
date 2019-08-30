@@ -3,77 +3,81 @@
 void AbstractWriter::write(const bool &v)
 {
     const void *ptr = &v;
-    this->write(ptr, sizeof(bool));
+    this->writeBase(ptr, sizeof(bool));
 }
 
 void AbstractWriter::write(const char &v)
 {
     const void *ptr = &v;
-    this->write(ptr, sizeof(char));
+    this->writeBase(ptr, sizeof(char));
 }
 
 void AbstractWriter::write(const unsigned char &v)
 {
     const void *ptr = &v;
-    this->write(ptr, sizeof(unsigned char));
+    this->writeBase(ptr, sizeof(unsigned char));
 }
 
 void AbstractWriter::write(const short &v)
 {
     const void *ptr = &v;
-    this->write(ptr, sizeof(short));
+    this->writeBase(ptr, sizeof(short));
 }
 
 void AbstractWriter::write(const unsigned short &v)
 {
     const void *ptr = &v;
-    this->write(ptr, sizeof(unsigned short));
+    this->writeBase(ptr, sizeof(unsigned short));
 }
 
 void AbstractWriter::write(const int &v)
 {
     const void *ptr = &v;
-    this->write(ptr, sizeof(int));
+    this->writeBase(ptr, sizeof(int));
 }
 
 void AbstractWriter::write(const unsigned int &v)
 {
     const void *ptr = &v;
-    this->write(ptr, sizeof(unsigned int));
+    this->writeBase(ptr, sizeof(unsigned int));
 }
 
 void AbstractWriter::write(const long &v)
 {
     const void *ptr = &v;
-    this->write(ptr, sizeof(long));
+    this->writeBase(ptr, sizeof(long));
 }
 
 void AbstractWriter::write(const unsigned long &v)
 {
     const void *ptr = &v;
-    this->write(ptr, sizeof(unsigned long));
+    this->writeBase(ptr, sizeof(unsigned long));
 }
 
 void AbstractWriter::write(const float &v)
 {
     const void *ptr = &v;
-    this->write(ptr, sizeof(float));
+    this->writeBase(ptr, sizeof(float));
 }
 
 void AbstractWriter::write(const double &v)
 {
     const void *ptr = &v;
-    this->write(ptr, sizeof(double));
+    this->writeBase(ptr, sizeof(double));
 }
 
 void AbstractWriter::write(const long double &v)
 {
     const void *ptr = &v;
-    this->write(ptr, sizeof(long double));
+    this->writeBase(ptr, sizeof(long double));
 }
 
 void AbstractWriter::write(const std::string &v)
 {
     this->write((unsigned int)v.size());
-    this->write(v.c_str(), v.size());
+    this->writeBase(v.c_str(), v.size());
+}
+
+void AbstractWriter::write(const void *data, int length){
+    this->writeBase(data, length);
 }

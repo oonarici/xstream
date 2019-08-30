@@ -16,7 +16,8 @@ public:
     long length();
     void flush();
 
-    virtual void write(const void *data, int length) override final;
+protected:
+    virtual void writeBase(const void *data, int length) override final;
 };
 
 #endif // FILEWRITER_H

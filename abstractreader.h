@@ -22,7 +22,7 @@ public:
     void read(long double &v); //Dolduruldu
     void read(std::string &v); //Dolduruldu
 
-    virtual void read(void *data, int length) = 0;
+    virtual void readBase(void *data, int length) = 0;
 };
 
 #endif // ABSTRACTREADER_H
