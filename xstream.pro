@@ -8,10 +8,14 @@ SOURCES += \
         abstractwriter.cpp \
         filereader.cpp \
         filewriter.cpp \
-        main.cpp
+        lazywriter.cpp \
+        main.cpp \
+        memorywriter.cpp
 
 HEADERS += \
     abstractreader.h \
     abstractwriter.h \
     filereader.h \
-    filewriter.h
+    filewriter.h \
+    lazywriter.h \
+    memorywriter.h

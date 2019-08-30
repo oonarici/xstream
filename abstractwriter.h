@@ -23,6 +23,8 @@ public:
     void write(const std::string &v); //Dolduruldu
     void write(const void *data, int length);
 
+    virtual void flush() {}
+
 protected:
     virtual void writeBase(const void *data, int length) = 0;
 };

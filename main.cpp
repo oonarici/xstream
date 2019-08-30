@@ -4,34 +4,34 @@
 #include "filewriter.h"
 #include "abstractreader.h"
 
+#include "memorywriter.h"
+#include "lazywriter.h"
+
+
 using namespace std;
 
 int main()
 {
-    //    ifstream file;
-    //    ifstream *pFile = &file;
-
-    //    file.open("/home/oonarici/Desktop/background-data.txt", std::ios::out | std::ios::in | std::ios::app);
-    //    FileReader someReader(pFile);
-
-    //    long length = someReader.length();
-    //    std::cout << "length: " << length << "\n"
-    //              << "Cursor Position: " << someReader.pos() << "\n";
-    //    someReader.seek(100);
-    //    std::cout << "Cursor Position: " << someReader.pos() << "\n";
-
     ofstream wfile;
     ofstream *pwFile = &wfile;
 
     wfile.open("asd.txt", std::ios::out | std::ios::in | std::ios::app);
 
     FileWriter someWriter(pwFile);
-    std::cout << someWriter.length() << "\n"
-              << someWriter.pos() << "\n";
-    someWriter.seek(3);
 
+    MemoryWriter mwriter;
+    mwriter.write(15);
+    mwriter.write(3.1415);
+    void *data = mwriter.data();
+    someWriter.write(data, mwriter.length()); //FileWriter.write() çağrıldığı an dosyaya yazar.
+    std::cout << someWriter.pos() << "\n"; //12
+
+    LazyWriter lwriter(&someWriter);
+    lwriter.write(15342L);
+    lwriter.write(3.42532f);
+    lwriter.write(23u);
+    std::cout << someWriter.pos() << "\n"; //Henüz dosyaya yazmadı, FileWriter.write()'ta olduğu gibi olmaz. LazyWriter.write(), dosyaya yazmak için bekletir. O yüzden burası da 12 yazacak.
+    lwriter.flush(); //İşte şimdi her şeyi dosyaya yazdı, artık imleç 28'de.
     std::cout << someWriter.pos() << "\n";
 
-    int data = 5;
-    someWriter.write(data);
 }

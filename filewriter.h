@@ -14,7 +14,7 @@ public:
     long pos() const;
     void seek(long pos);
     long length();
-    void flush();
+    virtual void flush();
 
 protected:
     virtual void writeBase(const void *data, int length) override final;
