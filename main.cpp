@@ -32,5 +32,6 @@ int main()
 
     std::cout << someWriter.pos() << "\n";
 
-
+    int data = 5;
+    someWriter.write(data);
 }
