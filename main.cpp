@@ -34,4 +34,16 @@ int main()
     lwriter.flush(); //İşte şimdi her şeyi dosyaya yazdı, artık imleç 28'de.
     std::cout << someWriter.pos() << "\n";
 
+    wfile.close();
+    std::ifstream ifile;
+    ifile.open("asd.txt");
+    FileReader freader(&ifile);
+    int a;
+    freader.read(a);
+    std::cout << a << "\n";
+    double d;
+    freader.read(d);
+    std::cout << d << "\n";
+
+
 }
