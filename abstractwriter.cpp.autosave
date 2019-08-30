@@ -30,6 +30,12 @@ void AbstractWriter::write(const unsigned short &v)
     this->write(ptr, sizeof(unsigned short));
 }
 
+void AbstractWriter::write(const int &v)
+{
+    const void *ptr = &v;
+    this->write(ptr, sizeof(int));
+}
+
 void AbstractWriter::write(const unsigned int &v)
 {
     const void *ptr = &v;
