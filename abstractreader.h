@@ -21,7 +21,9 @@ public:
     void read(double &v);
     void read(long double &v); //Dolduruldu
     void read(std::string &v); //Dolduruldu
+    void read(void *data, int length);
 
+protected:
     virtual void readBase(void *data, int length) = 0;
 };
 

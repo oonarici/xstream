@@ -81,3 +81,8 @@ void AbstractReader::read(std::string &v)
     data[size] = '\0';
     v = data;
 }
+
+void AbstractReader::read(void *data, int length)
+{
+    this->readBase(data, length);
+}

@@ -16,6 +16,7 @@ public:
     void seek(long pos);
     long length();
 
+protected:
     virtual void readBase(void *data, int length) override final;
 };
 

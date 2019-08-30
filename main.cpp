@@ -23,7 +23,7 @@ int main()
     ofstream wfile;
     ofstream *pwFile = &wfile;
 
-    wfile.open("/home/oonarici/Desktop/background-data.txt", std::ios::out | std::ios::in | std::ios::app);
+    wfile.open("asd.txt", std::ios::out | std::ios::in | std::ios::app);
 
     FileWriter someWriter(pwFile);
     std::cout << someWriter.length() << "\n"
