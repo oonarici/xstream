@@ -8,8 +8,8 @@ class AbstractWriter
 public:
     AbstractWriter() {}
 
-    void write(const bool &v);
-    void write(const char &v);
+    void write(const bool &v); //Dolduruldu
+    void write(const char &v); //Dolduruldu
     void write(const unsigned char &v);
     void write(const short &v);
     void write(const unsigned short &v);
